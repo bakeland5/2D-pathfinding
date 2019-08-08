@@ -15,7 +15,7 @@ r = obstacles
 x = init_path
 c2 = 1
 
-print_list = [9,24,49,99,199,399]
+print_list = [10,25,50,100,200,400]
 
 pt.figure(figsize=(8,8))
 pt.plot(x[:,0], x[:,1], label="Initial")
@@ -28,7 +28,7 @@ for iter in range(400):
         return(obj(arg,r,c1,c2))
     a = sopt.golden(f)
     x = x - a*dobj(x,r,c1,c2)
-    if iter in print_list:
+    if iter+1 in print_list:
         label = 'iter = %s' % (iter+1)
         pt.plot(x[:,0], x[:,1], label=label)
 
